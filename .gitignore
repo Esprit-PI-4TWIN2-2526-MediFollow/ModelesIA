@@ -1,2 +1,7 @@
 ﻿gravity-service/.venv/
 ml-service/.venv/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
