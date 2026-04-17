@@ -1,0 +1,17 @@
+After deployment, test with these commands:
+
+# Test Gravity Service
+curl https://your-gravity-service-url.onrender.com/health
+
+# Test ML Service  
+curl https://your-ml-service-url.onrender.com/health
+
+# Test Gravity Prediction
+curl -X POST https://your-gravity-service-url.onrender.com/predict-gravity \
+  -H "Content-Type: application/json" \
+  -d '{"patient_id":"test123","answers":[{"question":"pain level","answer":5},{"question":"temperature","answer":37.5}]}'
+
+# Test ML Alert Prediction
+curl -X POST https://your-ml-service-url.onrender.com/predict-alert \
+  -H "Content-Type: application/json" \
+  -d '{"heartRate":95,"spo2":92,"temperature":38.5,"systolicBP":140,"diastolicBP":90}'
