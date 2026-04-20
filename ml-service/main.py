@@ -6,11 +6,8 @@ from pydantic import BaseModel
 import pickle
 import numpy as np
 import os
-#from patient_analyzer import router as analysis_router
-from gravity_analyzer import router as gravity_router
-app = FastAPI(title="MediFollow ML Service")
 
-app.include_router(gravity_router)
+app = FastAPI(title="MediFollow ML Service")
 
 app.add_middleware(
     CORSMiddleware,

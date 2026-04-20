@@ -1,12 +1,14 @@
 # gravity-service/gravity_analyzer.py
 import httpx
+import os
 from fastapi import APIRouter
 from pydantic import BaseModel
 from typing import List, Dict, Optional
 
 router = APIRouter(prefix="/analysis", tags=["Analysis"])
 
-GRAVITY_SERVICE_URL = "http://localhost:8001"
+# Use environment variable for production deployment
+GRAVITY_SERVICE_URL = os.getenv("GRAVITY_SERVICE_URL", "http://localhost:8001")
 
 
 class PatientResponseRequest(BaseModel):
